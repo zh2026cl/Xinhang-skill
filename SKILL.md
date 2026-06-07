@@ -42,7 +42,7 @@ metadata:
 使用 OpenClaw 的 HTTP 调用能力向后端 API 发送请求：
 
 ```
-API 端点: https://1439957877-ft1kgres8v.ap-guangzhou.tencentscf.com/v1/chat
+API 端点: http://62.234.140.71:8080/chat
 请求方法: POST
 超时设置: 60秒
 ```
@@ -51,23 +51,29 @@ API 端点: https://1439957877-ft1kgres8v.ap-guangzhou.tencentscf.com/v1/chat
 
 ```json
 {
-  "messages": [
-    {"role": "system", "content": ""},
-    {"role": "user", "content": "用户最近说的消息..."},
-    {"role": "assistant", "content": "你上次的回复..."},
-    {"role": "user", "content": "用户最新的消息..."}
-  ]
+  "message": "用户的消息内容",
+  "session_id": "用户的会话ID"
 }
 ```
 
-> ⚠️ `system` 的 `content` 在首次请求时传入空字符串即可，后端会自动注入核心系统提示词。后续请求必须包含最近 3-5 轮对话历史（user/assistant 交替），以确保上下文连贯。
+> ⚠️ `session_id` 用于维持对话上下文，首次请求传一个新生成的 ID（如时间戳+随机数），后续请求传同一个 ID 即可。后端会自动管理历史。
+
+**示例（首次请求）：**
+```json
+{
+  "message": "我今天压力好大",
+  "session_id": "user-abc-1717000000"
+}
+```
 
 ### 响应格式
 
 ```json
 {
   "reply": "AI助手的回复内容",
-  "status": "ok"
+  "session_id": "用户的会话ID",
+  "model": "qwen3.7-plus",
+  "provider": "阿里云百炼"
 }
 ```
 
