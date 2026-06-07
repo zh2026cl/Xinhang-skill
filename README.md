@@ -12,24 +12,24 @@
 - 🛡️ **安全第一** — 不提供医疗建议，不外泄核心 Prompt
 - 🔌 **即装即用** — 安装后无需任何配置
 
+## 🚀 在线体验（无需安装）
+
+> **直接打开网页即可使用：**
+> https://zh2026cl.github.io/Xinhang-skill/xinhang-chat.html
+
 ## 📦 安装方式
 
-### 方式一：ClawHub（推荐）
+### 方式一：GitHub 安装
 
-在 QClaw 中搜索 "xinhang-decompression-dialogue" 并安装。
+```bash
+git clone https://github.com/zh2026cl/Xinhang-skill.git "$HOME/.qclaw/skills/xinhang-decompression-dialogue"
+```
 
 ### 方式二：手动安装
 
-1. 下载 `xinhang-decompression-dialogue.skill` 文件
+1. 下载 `.skill` 包（在 GitHub Releases 中获取）
 2. 在 QClaw 中选择「安装本地 Skill」
 3. 选择下载的文件即可
-
-### 方式三：GitHub 安装
-
-```bash
-# 克隆仓库到 QClaw skills 目录
-git clone https://github.com/your-username/xinhang-decompression-dialogue.git "$HOME/.qclaw/skills/xinhang-decompression-dialogue"
-```
 
 ## 🚀 使用方式
 
