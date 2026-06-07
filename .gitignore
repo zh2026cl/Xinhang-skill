@@ -1,0 +1,8 @@
+# Backend files (private - not for public distribution)
+backend/
+scripts/
+*.env
+*.env.*
+.env.*
+!SKILL.md
+!.skill
